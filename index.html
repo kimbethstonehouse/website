@@ -31,7 +31,7 @@
 							and I'm currently working on the JIT-as-a-Service project, supervised by <a href="https://homepages.inf.ed.ac.uk/tspink/" target="_blank">
 								Tom Spink</a> and <a href="https://blog.inf.ed.ac.uk/bfranke/" target="_blank">Björn Franke</a>. 
 							My research interests include compilers, operating systems, parallel architectures, and virtualisation. In particular, 
-							I am interested in code generation and optimisation and intelligent thread scheduling on multicore systems.</p>
+							I'm interested in accelerating just-in-time compilation and using code profiling to direct compiler optimisation.</p>
 					</section>
 
 				<!-- Two -->
@@ -61,6 +61,31 @@
 					</section>
 					<!-- Three -->
 					<section id="three">
+						<h2>Publications</h2>
+						<div class="row">
+							<article class="col-12 col-12-xsmall work-item">
+								<a href="https://ieeexplore.ieee.org/document/9975418" target="_blank">Leaps and bounds: Analyzing WebAssembly's performance with a focus on bounds checking</a>
+								<h5>In proceedings of the <i>IEEE International Symposium on Workload Characterization (IISWC)</i><br />
+									DOI: 10.1109/IISWC55918.2022.00030</h5>
+								<p>WebAssembly is gaining more and more popularity, finding applications beyond the Web browser for which it was initially designed. 
+									However, its performance, which developers intended to be comparable with native, has not been extensively studied to identify 
+									overheads and pinpoint their causes. This paper identifies that WebAssembly's bounds-checked memory access safety mechanism 
+									may introduce up to a 650% overhead, and requires further tuning. Based on that, we extend four popular WebAssembly runtimes 
+									with modern bounds checking mechanisms and compare the performance of each with native compiled code. The runtimes are evaluated 
+									on three different instruction set architectures: x86-64, Armv8, and RISC-V RV64GC. We show that, for simple numerical kernels 
+									from Poly-Bench/C, there are no significant differences in the bounds checking performance overheads across different instruction 
+									set architectures. With the default bounds checking mechanism, performance-oriented runtimes are able to achieve execution times 
+									within 20% of native on x86-64 platforms, within 35% on Armv8 platforms, and within 17% on RISC-V. We also show that, when 
+									scaling the tested runtimes to multiple threads, the default bounds checking approach taken by WAVM, Wasmtime, and V8 of using the 
+									mprotect syscall to resize memory can cause excessive locking in the Linux kernel. Such scaling might be used to quickly start up 
+									serverless instances for a single function without the overhead of spawning new processes. We present an alternative userfaultfd-based 
+									solution to mitigate this issue. We share our results, tools, and scripts under an open source license for other researchers to 
+									replicate and use to monitor the progress that WebAssembly runtimes make as they evolve.</p>
+							</article>
+						</div>
+					</section>
+					<!-- Four -->
+					<section id="four">
 						<h2>Outreach</h2>
 						<div class="row">
 							<article class="col-6 col-12-xsmall work-item">
@@ -123,7 +148,6 @@
 							<a href="images/uksrc-2.jpg" class="talk featured thumb fit"><img src="images/uksrc-2.jpg" alt="" /></a>
 							<p>My <a href="uksrc-full.pdf#toolbar=0&navpanes=0&scrollbar=0" target="_blank">talk</a> at the <a href="https://uksystems.org/workshop/2021/" target="_blank">UK System Research Challenges Workshop</a> discussed the motivation behind redesigning a research operating system to support multicore processing.
 								It also discussed the technical details involved in the implementation, and the resulting impact of having a clean multicore interface and a modular scheduler on both teaching and research. If you're interested in using InfOS for teaching, please get in touch!</p>
-
 						</article>
 					</div>
 					</section>	
@@ -134,18 +158,35 @@
 							<article class="col-12-xsmall work-item">
 								<h3>University of Edinburgh</h3>
 								<a href="images/teaching-2.jpg" class="talk featured thumb fit"><img src="images/teaching-2.jpg" alt="" /></a>
+								<p>At the University of Edinburgh, I am a teaching assistant on several large undergraduate Computer Science courses. This role mainly 
+									involves creating coursework assignments, marking student submissions, running tutorial and lab sessions, and lecturing.</p><br />
 								<a href="images/teaching-1.jpg" class="talk featured thumb fit"><img src="images/teaching-1.jpg" alt="" /></a>
-								<p>TA, marking, lectures, coursework, etc.</p>
 							</article>
-							<article class="col-12-xsmall work-item">
+							<article class="col-6 col-12-xsmall work-item">
+								<h3>University of Cambridge</h3>
+								<a href="images/cambridge.jpg" class="talk featured thumb fit"><img src="images/cambridge.jpg" alt="" /></a>
+								<p>I provide remote supervisions for courses at the University of Cambridge. This takes the form of weekly sessions with
+									small groups of one or two students.</p><br />
+								<h3>Private Tutoring</h3>
+								<p>I also offer private tutoring at various levels, from GCSE/N5 to undergraduate. Please get in touch if you'd like to know more!</p>
+							</article>
+							<article class="col-6 col-12-xsmall work-item">
+								<h3>Coronavirus Tutoring Initiative</h3>
+								<a href="images/cti.png" class="talk featured thumb fit"><img src="images/cti.png" alt="" /></a>
+								<p>During the national school closures, I volunteered to support both GCSE and A-Level Computer Science students with their studies,
+									in the form of individual weekly tutoring sessions. The aim of the initiative was to make sure that no child lost out on their 
+									education due to the pandemic, and to avoid increasing the disparity between the young people who can afford private tutoring and 
+									the young people who can't. In total, CTI provided over 50,000 hours of free tutoring to students across the UK.</p>
+							</article>
+							<!-- <article class="col-12-xsmall work-item">
 								<h3>Coronavirus Tutoring Initiative</h3>
 								<a href="images/cti.jpg" class="talk featured thumb fit"><img src="images/cti.jpg" alt="" /></a>
 								<p>Voluntary, etc.</p>
-							</article>
+							</article> -->
 						</div>
 					</section>
 					<!-- Five -->
-					<section id="five">
+					<!-- <section id="five">
 						<h2>Blog</h2>
 						<article class="post">
 							<header>
@@ -164,7 +205,7 @@
 								<li><a href="blog.html" class="button small">Continue Reading</a></li>
 							</ul>
 						</article>
-					</section>	
+					</section>	 -->
 			</div>
 
 		<!-- Footer -->
@@ -189,7 +230,7 @@
 						<li><a href="https://goo.gl/maps/sHxpvo8Egcw152Gu9" target="_blank" class="icon solid fa-map-marker-alt"><span class="label">Skype</span></a></li>
 					</ul>
 					<ul class="copyright">
-						<li>&copy; Kim Stonehouse</li><li>2022</a></li>
+						<li>&copy; Kim Stonehouse</li><li>2023</a></li>
 					</ul>
 				</div>
 			</footer>
